@@ -132,7 +132,7 @@ public class Empleado implements Comparable<Empleado>{
 		new Empleado(4, "Seba", 1600, 28, "SemiS", Genero.HOMBRE),
 		new Empleado(66, "Seba", 1666, 66, "SemiS", Genero.HOMBRE), 
 		new Empleado(5, "Mauro", 1400, 26, "SemiS", Genero.HOMBRE),
-		new Empleado(6, "Diego", 1200, 24, "Trainee", Genero.HOMBRE), 
+		new Empleado(6, "Diego", 1200, 24, "Trainee", Genero.HOMBRE),
 		new Empleado(7, "Juli", 1000, 22, "Trainee", Genero.HOMBRE),
 		new Empleado(0, "Pepe", 30000, 72, "Boss", Genero.HOMBRE),
 		new Empleado(8, "Janet", 1000, 22, "Trainee", Genero.MUJER),
@@ -146,12 +146,7 @@ public class Empleado implements Comparable<Empleado>{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + edad;
-		result = prime * result + ((genero == null) ? 0 : genero.hashCode());
 		result = prime * result + id;
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		result = prime * result + salario;
-		result = prime * result + ((sector == null) ? 0 : sector.hashCode());
 		return result;
 	}
 
@@ -164,24 +159,8 @@ public class Empleado implements Comparable<Empleado>{
 		if (getClass() != obj.getClass())
 			return false;
 		Empleado other = (Empleado) obj;
-		if (edad != other.edad)
-			return false;
-		if (genero != other.genero)
-			return false;
 		if (id != other.id)
 			return false;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
-			return false;
-		if (salario != other.salario)
-			return false;
-		if (sector == null) {
-			if (other.sector != null)
-				return false;
-		} else if (!sector.equals(other.sector))
-			return false;
 		return true;
-	}	
+	}
 }
