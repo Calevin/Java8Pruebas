@@ -28,9 +28,9 @@ public class TestStreamMain {
 	}
 	
 	public static void sumaDeCuadradosConStream(List<Integer> numeros) {
-		int suma = (int) numeros.stream()
+		int suma = numeros.stream()
 				.filter(n -> n % 2 == 1)
-				.map(n -> n * n)
+				.mapToInt(n -> n * n)
 				.reduce(0, Integer::sum);
 		
 		Integer.sum(1, 2);
