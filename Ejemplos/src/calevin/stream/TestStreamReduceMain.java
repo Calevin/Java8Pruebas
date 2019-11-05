@@ -23,8 +23,9 @@ public class TestStreamReduceMain {
 				.mapToInt(e->e.getSalario())
 				.reduce((salario1, salario2)->salario1+salario2);
 		
-		System.out.println(sumatoriaSalarioOptional.isPresent()? sumatoriaSalarioOptional.getAsInt():"NADA");
-		
+		sumatoriaSalarioOptional.ifPresent(System.out::println);
+		System.out.println(sumatoriaSalarioOptional.orElse(0));
+				
 		sumatoriaSalarioOptional= Empleado.empleadosParaTest()
 				.stream()
 				.filter(e->e.getSalario()>=30_000)
@@ -32,6 +33,8 @@ public class TestStreamReduceMain {
 				.reduce((salario1, salario2)->salario1+salario2);
 		
 		System.out.println(sumatoriaSalarioOptional.isPresent()? sumatoriaSalarioOptional.getAsInt():"NADA");
+		System.out.println(sumatoriaSalarioOptional.orElse(0));
+
 	}
 
 }

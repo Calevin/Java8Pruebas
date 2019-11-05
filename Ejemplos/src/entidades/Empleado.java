@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Empleado implements Comparable<Empleado>{
 
+	public static final Empleado EMPTY_EMPLEADO = new Empleado();
 	private int id;
 	private String nombre;
 	private int salario;

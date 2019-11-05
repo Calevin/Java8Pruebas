@@ -17,6 +17,9 @@ public class TestBiFuctionMain {
 		
 		System.out.println(mayorVersion.isPresent()?"Mayor: " + mayorVersion.get():"NADA");
 
+		System.out.println(mayorVersion.orElse(new Documento("NADA", -1)));
+
+		
 		//Usar metodo de instancia
 		//Metodo por defecto
 		Optional<Documento> menorVersion = Documento.documentosParaTest()
@@ -24,6 +27,9 @@ public class TestBiFuctionMain {
 				.reduce(Versionable::esVersionMenor);
 		
 		System.out.println(menorVersion.isPresent()?"Menor: " + menorVersion.get():"NADA");
+		//Usa Supplier
+		System.out.println(mayorVersion.orElseGet(() -> new Documento("NADA", -1)));
+
 		
 	}
 

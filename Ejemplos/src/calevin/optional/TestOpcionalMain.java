@@ -12,10 +12,18 @@ public class TestOpcionalMain {
 		
 		System.out.println(empleadoEncontrado.isPresent()?empleadoEncontrado.get():"No encontrado");
 		
+		System.out.println(empleadoEncontrado.orElse(Empleado.EMPTY_EMPLEADO));
+
+		
 		empleadoEncontrado = buscarEmpleadoPorNombre("Seba");
 		
 		System.out.println(empleadoEncontrado.isPresent()?empleadoEncontrado.get():"No encontrado");
 		
+		System.out.println(empleadoEncontrado.orElseGet(() -> {
+			System.out.println("No encontrado");
+			return Empleado.EMPTY_EMPLEADO;
+		}));
+
 	}
 
 	public static Optional<Empleado> buscarEmpleadoPorNombreSinStream(String nombre){

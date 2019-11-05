@@ -20,7 +20,9 @@ public class TestStreamMaxMinCoutMain {
 		.mapToInt(e->e.getSalario())
 		.max();
 
-		System.out.println(salarioMax.isPresent()?salarioMax.getAsInt():"NADA");		
+		System.out.println(salarioMax.isPresent()?salarioMax.getAsInt():"NADA");
+		System.out.println(salarioMax.orElse(0));
+
 	}
 	
 	public static void salarioMin() {
@@ -29,7 +31,8 @@ public class TestStreamMaxMinCoutMain {
 		.mapToInt(e->e.getSalario())
 		.min();
 
-		System.out.println(salarioMax.isPresent()?salarioMax.getAsInt():"NADA");		
+		System.out.println(salarioMax.isPresent()?salarioMax.getAsInt():"NADA");
+		System.out.println(salarioMax.orElse(0));
 	}
 	
 	public static void salarioCount() {
@@ -38,6 +41,7 @@ public class TestStreamMaxMinCoutMain {
 		//.mapToInt(e->e.getSalario())
 		.count());
 
-		System.out.println(salarioCount.isPresent()?salarioCount.getAsLong():"NADA");		
+		System.out.println(salarioCount.isPresent()?salarioCount.getAsLong():"NADA");
+		System.out.println(salarioCount.orElse(0));
 	}	
 }
