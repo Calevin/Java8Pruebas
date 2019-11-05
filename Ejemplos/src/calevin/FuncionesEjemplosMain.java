@@ -1,10 +1,16 @@
 package calevin;
 
+import java.util.function.Function;
+
 public class FuncionesEjemplosMain {
 
 	public static void main(String[] args) {
 		System.out.println("INICIO");
 
+		Function<Integer, String> intToString = (i)-> { 
+			return Integer.toString(i);
+		};
+		
 		FunctionEjemploSinImplementar fSinImplementar = parametro -> System.out
 				.println("fSinImplementar entero: " + parametro);
 
